@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====== BASIC META ====== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Michmax Day Spa | Luxury Spa & Massage in Windhoek</title>
+  <meta name="description" content="Michmax Day Spa offers professional massage, waxing, lashes, and spa treatments in Windhoek. Easy online booking, clear prices, and relaxing ambience. Book your session today." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Michmax Day Spa – Book Your Spa Treatment in Windhoek" />
+  <meta property="og:description" content="Professional massages, waxing, lashes & spa treatments. Treat your body and mind like the temples they are." />
+  <meta property="og:image" content="https://michmax-day-spa.vercel.app/images/hero-image.jpg" />
+  <meta property="og:url" content="https://michmax-day-spa.vercel.app" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- ====== STYLES ====== -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- ====== HEADER / NAV ====== -->
+  <header aria-label="Site header" id="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Michmax Day Spa home">
+        <div style="width:44px;height:44px;background:var(--brand);border-radius:var(--radius-small);display:flex;align-items:center;justify-content:center;font-weight:900;color:white;font-size:1.5rem;">M</div>
+        <span class="brand-name">Michmax Day Spa</span>
+      </a>
+      <nav class="navlinks mobile-hide" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#booking">Book</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="mobile-hide" style="display:flex;gap:12px">
+        <a class="btn outline" href="https://wa.me/264814654741?text=Hi%21%20I%27d%20like%20to%20book%20a%20treatment" aria-label="WhatsApp">WhatsApp</a>
+        <a class="btn" href="#booking" aria-label="Book now">Book Now</a>
+      </div>
+      
+      <!-- Mobile hamburger menu -->
+      <div class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services" onclick="closeMobileMenu()">Services</a>
+      <a href="#packages" onclick="closeMobileMenu()">Packages</a>
+      <a href="#booking" onclick="closeMobileMenu()">Book Now</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+      <a href="https://wa.me/264814654741?text=Hi%21%20I%27d%20like%20to%20book%20a%20treatment" onclick="closeMobileMenu()">WhatsApp</a>
+      <a href="tel:+264814654741" onclick="closeMobileMenu()">Call Us</a>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <main id="top" class="container">
+    <section class="hero" aria-label="Hero">
+      <div>
+        <span class="kicker">Skin • Body • Waxing • Lashes • Mani & Pedi</span>
+        <h1>Treat Your Body and Mind Like the Temples They Are</h1>
+        <p>Experience luxury spa treatments in the heart of Windhoek. From relaxing massages to professional beauty services, we offer a complete wellness experience in our tranquil day spa.</p>
+        <div style="display:flex;gap:12px;margin:24px 0 8px;flex-wrap:wrap">
+          <a class="btn" href="#booking">Book Now</a>
+          <a class="btn outline" href="tel:+264814654741">Call 081 465 4741</a>
+        </div>
+        <ul class="hero-bullets">
+          <li><span class="chip">Professional therapists</span></li>
+          <li><span class="chip">Luxury treatments</span></li>
+          <li><span class="chip">Central Windhoek</span></li>
+        </ul>
+      </div>
+      <div class="hero-card">
+        <div style="aspect-ratio:4/3;background:var(--gradient-primary);border-radius:var(--radius-small);display:flex;align-items:center;justify-content:center">
+          <img src="/images/spa-interior.jpg" alt="Michmax Day Spa interior" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <p class="muted" style="display:none;">Your spa interior photo here</p>
+        </div>
+        <p class="muted" style="margin-top:12px;font-size:0.9rem">Experience luxury and tranquility in our beautifully designed treatment rooms.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== SERVICES ====== -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="sub">Discover our full range of spa and beauty treatments. Click on any category to explore our services and pricing.</p>
+      
+      <!-- MASSAGES -->
+      <div class="collapsible-section" id="massages">
+        <div class="collapsible-header" onclick="toggleSection('massages')">
+          <h3>Massages & Wellness</h3>
+          <div class="collapsible-icon">+</div>
+        </div>
+        <div class="collapsible-content">
+          <div class="collapsible-inner">
+            <p class="sub" style="margin-bottom:24px">Relax and rejuvenate with our professional massage treatments, designed to relieve stress and tension.</p>
+            <div class="service-grid">
+              <div class="service-item">
+                <h4>Michmax Day Spa Soothing</h4>
+                <div class="duration">60 minutes</div>
+                <div class="price">N$400</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Swedish Full Body</h4>
+                <div class="duration">60 minutes</div>
+                <div class="price">N$450</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Deep Tissue/Sports Massage</h4>
+                <div class="duration">60 minutes</div>
+                <div class="price">N$500</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Hot Stone Therapy</h4>
+                <div class="duration">60 minutes</div>
+                <div class="price">N$500</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Aroma Infused Full Body</h4>
+                <div class="duration">60 minutes</div>
+                <div class="price">N$450</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Four Hands Massage</h4>
+                <div class="duration">60 minutes</div>
+                <div class="price">N$600</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Tranquility For Two</h4>
+                <div class="duration">60 minutes</div>
+                <div class="price">N$900</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Back, Neck & Shoulder</h4>
+                <div class="duration">30 minutes</div>
+                <div class="price">N$300</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Foot Reflexology</h4>
+                <div class="duration">30 minutes</div>
+                <div class="price">N$250</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WAXING -->
+      <div class="collapsible-section" id="waxing">
+        <div class="collapsible-header" onclick="toggleSection('waxing')">
+          <h3>Smooth Obsession - Waxing</h3>
+          <div class="collapsible-icon">+</div>
+        </div>
+        <div class="collapsible-content">
+          <div class="collapsible-inner">
+            <p class="sub" style="margin-bottom:24px">Professional waxing services for smooth, long-lasting results using high-quality products.</p>
+            <div class="service-grid">
+              <div class="service-item">
+                <h4>Hollywood Wax</h4>
+                <div class="duration">45 minutes</div>
+                <div class="price">N$400</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Full Leg Wax</h4>
+                <div class="duration">60 minutes</div>
+                <div class="price">N$450</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Bikini Wax</h4>
+                <div class="duration">30 minutes</div>
+                <div class="price">N$300</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Underarm Wax</h4>
+                <div class="duration">30 minutes</div>
+                <div class="price">N$200</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Full Arm Wax</h4>
+                <div class="duration">45 minutes</div>
+                <div class="price">N$300</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Half Leg Wax</h4>
+                <div class="duration">45 minutes</div>
+                <div class="price">N$300</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Back Wax</h4>
+                <div class="duration">45 minutes</div>
+                <div class="price">N$320</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LASHES & BROWS -->
+      <div class="collapsible-section" id="lashes">
+        <div class="collapsible-header" onclick="toggleSection('lashes')">
+          <h3>Lashes & Brows</h3>
+          <div class="collapsible-icon">+</div>
+        </div>
+        <div class="collapsible-content">
+          <div class="collapsible-inner">
+            <p class="sub" style="margin-bottom:24px">Enhance your natural beauty with our professional lash extensions and eyebrow services.</p>
+            <div class="service-grid">
+              <div class="service-item">
+                <h4>Volume Lashes</h4>
+                <div class="duration">Full set application</div>
+                <div class="price">N$300</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Natural Classic Lashes</h4>
+                <div class="duration">Full set application</div>
+                <div class="price">N$350</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Wispy Hybrid Lashes</h4>
+                <div class="duration">Full set application</div>
+                <div class="price">N$400</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>YY Lashes</h4>
+                <div class="duration">Full set application</div>
+                <div class="price">N$280</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Cluster Lashes</h4>
+                <div class="duration">Quick application</div>
+                <div class="price">N$250</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Lash Refill</h4>
+                <div class="duration">Maintenance session</div>
+                <div class="price">N$120</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Lash Removal</h4>
+                <div class="duration">Safe removal service</div>
+                <div class="price">N$80</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Eyebrow Shape & Tint</h4>
+                <div class="duration">Complete brow service</div>
+                <div class="price">N$180</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Eyebrow Shape</h4>
+                <div class="duration">Professional shaping</div>
+                <div class="price">N$120</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WELLNESS TREATMENTS -->
+      <div class="collapsible-section" id="wellness">
+        <div class="collapsible-header" onclick="toggleSection('wellness')">
+          <h3>Wellness Blueprint</h3>
+          <div class="collapsible-icon">+</div>
+        </div>
+        <div class="collapsible-content">
+          <div class="collapsible-inner">
+            <p class="sub" style="margin-bottom:24px">Specialized treatments for complete body wellness and skin rejuvenation.</p>
+            <div class="service-grid">
+              <div class="service-item">
+                <h4>Full Body Exfoliation</h4>
+                <div class="duration">45 minutes</div>
+                <div class="price">N$500</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Detoxifying Back Ritual</h4>
+                <div class="duration">60 minutes (includes back facial + massage)</div>
+                <div class="price">N$600</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Foot Peel</h4>
+                <div class="duration">30 minutes</div>
+                <div class="price">N$250</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+              <div class="service-item">
+                <h4>Honey Heel Foot Treatment</h4>
+                <div class="duration">45 minutes</div>
+                <div class="price">N$350</div>
+                <a class="btn" href="#booking">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PACKAGES ====== -->
+  <section id="packages" class="section" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="highlight-section">
+        <h2 class="section-title">Spa Packages & Memberships</h2>
+        <p class="sub">Save with our value packages and enjoy regular treatments with special member pricing.</p>
+        <div class="two">
+          <div>
+            <h3>Treatment Packages</h3>
+            <ul style="list-style:none;padding:0">
+              <li style="margin:12px 0"><strong>3× Massage Package</strong> – N$1,200 <span class="muted">(save 10%)</span></li>
+              <li style="margin:12px 0"><strong>5× Massage Package</strong> – N$1,900 <span class="muted">(save 15%)</span></li>
+              <li style="margin:12px 0"><strong>Spa Day Package</strong> – Massage + Facial + Manicure</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Monthly Memberships</h3>
+            <ul style="list-style:none;padding:0">
+              <li style="margin:12px 0"><strong>Essential Membership</strong> – N$400/month</li>
+              <li style="margin:12px 0">• 1 massage per month</li>
+              <li style="margin:12px 0">• 10% off additional services</li>
+              <li style="margin:12px 0">• Priority booking</li>
+            </ul>
+          </div>
+        </div>
+        <div style="margin-top:20px">
+          <a class="btn" href="#booking">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== BOOKING ====== -->
+  <section id="booking" class="section">
+    <div class="container">
+      <h2 class="section-title">Book Your Treatment</h2>
+      <p class="sub">Ready to relax? Book your appointment online or contact us directly.</p>
+      
+      <div class="card" style="padding:0;overflow:hidden">
+        <div style="aspect-ratio:16/10;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center">
+          <p class="muted">Online booking system will be embedded here</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;justify-content:center">
+        <a class="btn" href="https://wa.me/264814654741?text=Hi%21%20I%27d%20like%20to%20book%20a%20treatment">Book via WhatsApp</a>
+        <a class="btn outline" href="tel:+264814654741">Call 081 465 4741</a>
+        <a class="btn outline" href="https://instagram.com/michmax.day.spa">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT & LOCATION ====== -->
+  <section id="contact" class="section" style="background:var(--bg-soft)">
+    <div class="container two">
+      <div class="card">
+        <h2 class="section-title">Find Us</h2>
+        <p class="sub">Visit us in the heart of Windhoek West for your perfect spa experience.</p>
+        <div style="margin:20px 0">
+          <p><strong>Address:</strong><br>
+          18B Pasteur Street<br>
+          Windhoek West, Windhoek<br>
+          Namibia</p>
+          
+          <p><strong>Phone:</strong> <a href="tel:+264814654741" style="color:var(--brand)">081 465 4741</a><br>
+          <strong>WhatsApp:</strong> <a href="https://wa.me/264814654741" style="color:var(--brand)">Message us</a><br>
+          <strong>Instagram:</strong> <a href="https://instagram.com/michmax.day.spa" style="color:var(--brand)">@michmax.day.spa</a></p>
+        </div>
+        <iframe class="map" loading="lazy" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.1!2d17.0658!3d-22.5609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1c0b1b4!2s18B+Pasteur+St%2C+Windhoek+West%2C+Windhoek%2C+Namibia!5e0!3m2!1sen!2s!4v1609459200000!5m2!1sen!2s" 
+          allowfullscreen aria-label="Map to Michmax Day Spa"></iframe>
+      </div>
+      <div class="card">
+        <h2 class="section-title">Hours & Policies</h2>
+        <h3>Opening Hours</h3>
+        <ul style="list-style:none;padding:0">
+          <li style="margin:8px 0">Monday – Friday: 9:00 AM – 6:00 PM</li>
+          <li style="margin:8px 0">Saturday: 9:00 AM – 4:00 PM</li>
+          <li style="margin:8px 0">Sunday: Closed</li>
+        </ul>
+        
+        <h3 style="margin-top:24px">Policies</h3>
+        <ul style="list-style:none;padding:0">
+          <li style="margin:8px 0"><strong>Arrival:</strong> Please arrive 10 minutes early</li>
+          <li style="margin:8px 0"><strong>Cancellation:</strong> 24-hour notice required</li>
+          <li style="margin:8px 0"><strong>Payment:</strong> Cash, card, and EFT accepted</li>
+          <li style="margin:8px 0"><strong>Hygiene:</strong> Fresh linens for every treatment</li>
+        </ul>
+
+        <div style="margin-top:24px">
+          <a class="btn" href="#booking">Book Now</a>
+          <a class="btn outline" href="https://instagram.com/michmax.day.spa" style="margin-left:12px">Follow Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+      <div>
+        <strong>Michmax Day Spa</strong> · <span class="muted">18B Pasteur Street, Windhoek West</span>
+        <div class="muted">© <span id="year"></span> Michmax Day Spa. All rights reserved.</div>
+      </div>
+      <div class="muted">
+        <a href="https://instagram.com/michmax.day.spa" style="color:var(--muted)">Instagram</a> · 
+        <a href="https://facebook.com/michmaxdayspa" style="color:var(--muted)">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== STICKY BOOKING BAR (MOBILE) ====== -->
+  <div class="stickybar">
+    <a class="btn" href="#booking">Book Now</a>
+    <a class="btn outline" href="https://wa.me/264814654741?text=Hi%21%20I%27d%20like%20to%20book%20a%20treatment">WhatsApp</a>
+    <a class="btn outline" href="tel:+264814654741">Call</a>
+  </div>
+
+  <!-- ====== JSON-LD SCHEMA (SEO) ====== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Michmax Day Spa",
+    "image": ["https://michmax-day-spa.vercel.app/images/hero-image.jpg"],
+    "url": "https://michmax-day-spa.vercel.app",
+    "telephone": "+264814654741",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "18B Pasteur Street",
+      "addressLocality": "Windhoek West",
+      "addressRegion": "Khomas",
+      "addressCountry": "NA" 
+    },
+    "geo": {"@type":"GeoCoordinates","latitude": -22.5609, "longitude": 17.0658},
+    "openingHours": [
+      "Mo-Fr 09:00-18:00",
+      "Sa 09:00-16:00",
+      "Su closed"
+    ],
+    "priceRange": "N$70-N$900",
+    "sameAs": [
+      "https://instagram.com/michmax.day.spa",
+      "https://facebook.com/michmaxdayspa"
+    ]
+  }
+  </script>
+
+  <!-- ====== SCRIPTS ====== -->
+  <script src="/js/main.js"></script>
+</body>
+</html>
