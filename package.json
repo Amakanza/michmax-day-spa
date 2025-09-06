@@ -23,7 +23,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/michmax-day-spa.git"
+    "url": "https://github.com/Amakanza/michmax-day-spa.git"
   },
   "homepage": "https://michmax-day-spa.vercel.app",
   "devDependencies": {
