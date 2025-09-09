@@ -59,14 +59,14 @@ body::before {
 }
 
 /* =================================
-   PNG OVERLAY STYLES
+   PNG OVERLAY STYLES - RESTRUCTURED FOR PROPER LAYERING
    ================================= */
 
-/* Base overlay styles */
+/* Base overlay styles - positioned above content but below navigation */
 .png-overlay {
   position: fixed;
-  pointer-events: none;
-  z-index: 1;
+  pointer-events: none; /* Keeps overlays clickable-through */
+  z-index: 50; /* Above content (z-index: 10) but below navigation (z-index: 100+) */
   opacity: 0.4;
   transition: opacity 0.5s ease, transform 0.3s ease;
   user-select: none;
@@ -81,7 +81,7 @@ body::before {
   width: 120px;
   height: auto;
   animation: float 6s ease-in-out infinite;
-  z-index: 2;
+  z-index: 60; /* Highest overlay priority - this is Spa_candle_1.png */
 }
 
 .overlay-candle-2 {
@@ -90,7 +90,7 @@ body::before {
   width: 100px;
   height: auto;
   animation: float 8s ease-in-out infinite reverse;
-  z-index: 1;
+  z-index: 55; /* Lower than candle-1 but still above content */
 }
 
 /* Animation keyframes */
@@ -215,7 +215,7 @@ img {
   margin-inline: auto;
   padding: 0 24px;
   position: relative;
-  z-index: 10;
+  z-index: 10; /* Content layer - below overlays */
 }
 
 /* Enhanced Glossy Button Styles - REDUCED GLOW */
@@ -337,7 +337,7 @@ img {
 .section {
   padding: 80px 0;
   position: relative;
-  z-index: 10;
+  z-index: 10; /* Content layer */
 }
 
 .section-title {
@@ -376,11 +376,11 @@ img {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-/* Enhanced Header with Glass Effect */
+/* Enhanced Header with Glass Effect - HIGH Z-INDEX FOR NAVIGATION */
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 100; /* Navigation layer - above overlays */
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: var(--backdrop-blur);
   border-bottom: 1px solid var(--border);
@@ -494,7 +494,7 @@ header.scrolled {
   height: 100vh;
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: var(--backdrop-blur);
-  z-index: 200;
+  z-index: 200; /* Mobile menu - highest priority */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -529,6 +529,8 @@ header.scrolled {
   gap: 4px;
   cursor: pointer;
   padding: 8px;
+  z-index: 101; /* Above header but below mobile menu */
+  position: relative;
 }
 
 .hamburger span {
@@ -869,7 +871,7 @@ header.scrolled {
 /* Enhanced Sticky Bar */
 .stickybar {
   position: fixed;
-  z-index: 90;
+  z-index: 90; /* Below navigation but above overlays */
   left: 0;
   right: 0;
   bottom: 0;
@@ -893,6 +895,8 @@ footer {
   color: var(--muted);
   background: var(--gradient-glass);
   backdrop-filter: var(--backdrop-blur);
+  position: relative;
+  z-index: 10; /* Content layer */
 }
 
 .map {
