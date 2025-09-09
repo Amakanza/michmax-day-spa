@@ -80,7 +80,6 @@ body::before {
   right: 5%;
   width: 120px;
   height: auto;
-  animation: float 6s ease-in-out infinite;
   z-index: 60; /* Highest overlay priority - this is Spa_candle_1.png */
 }
 
@@ -89,7 +88,6 @@ body::before {
   left: 3%;
   width: 100px;
   height: auto;
-  animation: float 8s ease-in-out infinite reverse;
   z-index: 55; /* Lower than candle-1 but still above content */
 }
 
