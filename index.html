@@ -191,123 +191,191 @@ header {
   box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
 }
 
-/* Hero Section */
-.hero {
-  padding: 80px 0;
-  text-align: center;
-  background: var(--gradient-primary);
-  border-radius: var(--radius);
-  margin: 40px 0;
-  position: relative;
-  overflow: hidden;
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
 }
 
-.hero::before {
-  content: '';
+/* Hero Section - Full Screen with Image Background */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/images/hero-spa-treatment.jpg') center/cover;
+  background-attachment: fixed;
+}
+
+.hero-image-placeholder {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-}
-
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.hero-subtitle {
-  color: var(--brand);
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  margin-bottom: 24px;
-  color: var(--text);
-  line-height: 1.1;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin-bottom: 40px;
-  line-height: 1.7;
-}
-
-.hero-cta {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
   display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
+  justify-content: center;
+  z-index: 1;
+}
+
+.image-upload-area {
+  border: 3px dashed var(--brand);
+  background: rgba(212, 175, 55, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  border-radius: var(--radius);
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary {
-  background: var(--gradient-gold);
-  color: #000;
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
-}
-
-.btn-secondary {
-  background: var(--gradient-glass);
-  color: var(--brand);
-  border: 2px solid var(--brand);
-  backdrop-filter: var(--backdrop-blur);
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-/* Services Overview */
-.services-overview {
-  padding: 100px 0;
+  cursor: pointer;
+  max-width: 500px;
   text-align: center;
 }
 
-.section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 24px;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.image-upload-area:hover {
+  border-color: var(--brand-dark);
+  background: rgba(212, 175, 55, 0.2);
+  transform: scale(1.02);
 }
 
-.section-subtitle {
+.upload-icon {
+  font-size: 4rem;
+  color: var(--brand);
+  opacity: 0.8;
+}
+
+.upload-text {
+  color: var(--text);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.upload-hint {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-align: center;
+  max-width: 400px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding-left: 60px;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 32px;
+  color: var(--brand);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--gradient-gold);
+  color: #000;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6);
+}
+
+.social-links {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  display: flex;
+  gap: 20px;
+  z-index: 2;
+}
+
+.social-links a {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.5);
+}
+
+/* Services Section - Matching Reference Layout */
+.services-section {
+  padding: 100px 0;
+  background: var(--bg);
+  position: relative;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.services-header::before {
+  content: '🌿';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  opacity: 0.7;
+}
+
+.services-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.services-subtitle {
   font-size: 1.2rem;
   color: var(--muted);
-  margin-bottom: 60px;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   margin-top: 60px;
 }
 
@@ -316,72 +384,150 @@ header {
   backdrop-filter: var(--backdrop-blur);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius);
-  padding: 32px;
-  text-align: center;
+  overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-gold);
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-intense);
-  background: rgba(255, 255, 255, 0.15);
 }
 
-.service-card:hover::before {
-  opacity: 1;
-}
-
-.service-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--gradient-gold);
-  border-radius: 50%;
+.service-image {
+  width: 100%;
+  height: 250px;
+  background: var(--gradient-primary);
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 24px;
-  font-size: 2rem;
-  color: #000;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
 }
 
-.service-card h3 {
-  font-size: 1.4rem;
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
+.service-image .image-upload-area {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: 2px dashed var(--brand);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.service-image .upload-icon {
+  font-size: 3rem;
+}
+
+.service-image .upload-text {
+  font-size: 1.1rem;
+}
+
+.service-image .upload-hint {
+  font-size: 0.9rem;
+}
+
+.service-content {
+  padding: 32px;
+  text-align: center;
+}
+
+.service-title {
+  font-size: 1.8rem;
   font-weight: 700;
+  color: var(--brand);
   margin-bottom: 16px;
-  color: var(--text);
 }
 
-.service-card p {
+.service-description {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 24px;
 }
 
-/* Treatment Categories */
-.treatments {
+.service-btn {
+  background: var(--gradient-gold);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.service-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Large Feature Section */
+.feature-section {
   padding: 100px 0;
   background: var(--bg-soft);
 }
 
+.feature-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.feature-text h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.feature-text p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.feature-image {
+  width: 100%;
+  height: 500px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* Treatments Grid Section */
+.treatments-section {
+  padding: 100px 0;
+  background: var(--bg);
+}
+
 .treatments-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 60px;
 }
 
 .treatment-category {
@@ -402,21 +548,19 @@ header {
   padding: 32px;
   background: var(--gradient-primary);
   border-bottom: 1px solid var(--glass-border);
+  text-align: center;
 }
 
 .treatment-header h3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--brand);
   margin-bottom: 8px;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .treatment-header p {
   color: var(--muted);
+  font-size: 1rem;
 }
 
 .treatment-list {
@@ -426,7 +570,7 @@ header {
 .treatment-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 16px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -439,6 +583,7 @@ header {
   color: var(--text);
   font-weight: 600;
   margin-bottom: 4px;
+  font-size: 1.1rem;
 }
 
 .treatment-info span {
@@ -449,54 +594,8 @@ header {
 .treatment-price {
   color: var(--brand);
   font-weight: 700;
-  font-size: 1.1rem;
-}
-
-/* About Section */
-.about {
-  padding: 100px 0;
-}
-
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.about-text h2 {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 700;
-  margin-bottom: 24px;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.about-text p {
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
-
-.about-image {
-  aspect-ratio: 4/3;
-  background: var(--gradient-primary);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.about-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius);
+  font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
 /* Contact Section */
@@ -520,10 +619,10 @@ header {
 }
 
 .contact-info h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 32px;
-  color: var(--text);
+  color: var(--brand);
 }
 
 .contact-item {
@@ -534,8 +633,8 @@ header {
 }
 
 .contact-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background: var(--gradient-gold);
   border-radius: 50%;
   display: flex;
@@ -544,21 +643,25 @@ header {
   color: #000;
   font-weight: bold;
   flex-shrink: 0;
+  font-size: 1.2rem;
 }
 
 .contact-details h4 {
   color: var(--text);
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
 }
 
 .contact-details p {
   color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .contact-details a {
   color: var(--brand);
   text-decoration: none;
+  font-weight: 500;
 }
 
 .contact-details a:hover {
@@ -567,12 +670,13 @@ header {
 
 .hours-list {
   list-style: none;
+  margin-top: 24px;
 }
 
 .hours-list li {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
+  padding: 12px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text-secondary);
 }
@@ -581,17 +685,29 @@ header {
   border-bottom: none;
 }
 
-/* Map Placeholder */
 .map-container {
   background: var(--gradient-glass);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius);
-  height: 400px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius);
+}
+
+.map-placeholder {
   color: var(--muted);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 40px;
 }
 
 /* Footer */
@@ -609,9 +725,10 @@ footer {
 }
 
 .footer-section h4 {
-  color: var(--text);
+  color: var(--brand);
   font-weight: 700;
   margin-bottom: 20px;
+  font-size: 1.2rem;
 }
 
 .footer-section p,
@@ -619,6 +736,8 @@ footer {
   color: var(--muted);
   text-decoration: none;
   line-height: 1.6;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .footer-section a:hover {
@@ -632,7 +751,31 @@ footer {
   color: var(--muted);
 }
 
-/* Mobile Responsiveness */
+.footer-bottom a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness - Complete */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .feature-content {
+    gap: 60px;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 16px;
@@ -640,24 +783,72 @@ footer {
 
   .nav-menu {
     display: none;
+    gap: 20px;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 15px 20px;
+    background: var(--gradient-glass);
+    border-radius: var(--radius-small);
+    margin-bottom: 10px;
+    border: 1px solid var(--glass-border);
+  }
+
+  .mobile-menu-btn {
+    display: block;
   }
 
   .hero {
-    padding: 60px 0;
-    margin: 20px 0;
+    height: 80vh;
   }
 
-  .hero-cta {
-    flex-direction: column;
-    align-items: center;
+  .hero-content {
+    padding-left: 0;
+    text-align: center;
+    padding: 0 20px;
   }
 
-  .services-grid,
+  .hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .social-links {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-image {
+    height: 200px;
+  }
+
+  .feature-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .feature-image {
+    height: 300px;
+  }
+
   .treatments-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 
-  .about-content,
   .contact-content {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -669,46 +860,199 @@ footer {
     gap: 8px;
   }
 
-  .section-title {
-    font-size: 2rem;
+  .services-title {
+    font-size: 2.5rem;
   }
 
-  .services-overview,
-  .treatments,
-  .about,
+  .services-section,
+  .feature-section,
+  .treatments-section,
   .contact {
     padding: 80px 0;
   }
-}
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
+  .contact-info,
+  .treatment-category {
+    padding: 24px;
   }
-  
-  .btn {
-    padding: 12px 20px;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .service-card,
-  .treatment-category,
-  .contact-info {
+
+  .treatment-header,
+  .treatment-list {
     padding: 24px;
   }
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+@media (max-width: 480px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content {
+    padding: 0 16px;
+  }
+
+  .hero-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+
+  .service-card,
+  .treatment-category,
+  .contact-info {
+    padding: 20px;
+  }
+
+  .service-content {
+    padding: 24px;
+  }
+
+  .service-image {
+    height: 180px;
+  }
+
+  .feature-image {
+    height: 250px;
+  }
+
+  .treatment-header {
+    padding: 20px;
+  }
+
+  .treatment-list {
+    padding: 20px;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .social-links {
+    gap: 15px;
+    bottom: 20px;
+  }
+
+  .social-links a {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .image-upload-area {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .upload-icon {
+    font-size: 2.5rem;
+  }
+
+  .upload-text {
+    font-size: 1.1rem;
+  }
+
+  .upload-hint {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .logo-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.6rem;
+  }
 }
 
 /* Focus styles for accessibility */
-.btn:focus,
+.cta-btn:focus,
+.hero-btn:focus,
+.service-btn:focus,
 .nav-menu a:focus {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
+}
+
+/* Additional Interactive Elements */
+.service-card,
+.treatment-category,
+.contact-info {
+  cursor: pointer;
+}
+
+/* Loading Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-gold);
+  border: none;
+  border-radius: 50%;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 90;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.5);
 }
   </style>
 </head>
@@ -724,12 +1068,15 @@ html {
         </a>
         
         <ul class="nav-menu">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#treatments">Day Packages</a></li>
+          <li><a href="#corporate">Corporate Wellness</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         
+        <button class="mobile-menu-btn">☰</button>
         <a href="#contact" class="cta-btn">Book Now</a>
       </nav>
     </div>
@@ -737,71 +1084,123 @@ html {
 
   <!-- Hero Section -->
   <main>
-    <section class="hero">
+    <section id="home" class="hero">
+      <div class="hero-image-placeholder">
+        <div class="image-upload-area">
+          <div class="upload-icon">🖼️</div>
+          <div class="upload-text">Hero Background Image</div>
+          <div class="upload-hint">Upload a relaxing spa treatment or facial massage image<br>Recommended: 1920x1080px for full-screen hero background</div>
+        </div>
+      </div>
+      
       <div class="container">
         <div class="hero-content">
-          <div class="hero-subtitle">Welcome to</div>
-          <h1>Michmax Day Spa</h1>
-          <p>Situated in the heart of Windhoek, we offer the most comprehensive range of services filled with value-for-money treatments to meet the needs of the most discerning guests.</p>
-          <p>Relax, restore, and indulge at Michmax Day Spa, a tranquil sanctuary where you can retreat from the demands of daily life. Using a holistic approach to wellness, spa treatments are personalized to bring balance and equilibrium to body, mind, and spirit.</p>
-          <div class="hero-cta">
-            <a href="#treatments" class="btn btn-primary">View Treatments</a>
-            <a href="#contact" class="btn btn-secondary">Book Appointment</a>
-          </div>
+          <h1>Your break<br>from the city<br>within the city</h1>
+          <a href="#contact" class="hero-btn">Book Now</a>
         </div>
+      </div>
+      
+      <div class="social-links">
+        <a href="https://www.facebook.com/michmaxdayspa" title="Facebook">f</a>
+        <a href="https://instagram.com/michmax.day.spa" title="Instagram">📷</a>
       </div>
     </section>
 
-    <!-- Services Overview -->
-    <section id="services" class="services-overview">
+    <!-- Services Section -->
+    <section id="services" class="services-section">
       <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">Discover our comprehensive range of spa and wellness services designed to rejuvenate your body, mind, and spirit.</p>
+        <div class="services-header">
+          <h2 class="services-title">Our Spa Services</h2>
+          <p class="services-subtitle">Your break from the city within the city</p>
+        </div>
         
         <div class="services-grid">
+          <!-- Body Therapy -->
           <div class="service-card">
-            <div class="service-icon">💆</div>
-            <h3>Massages & Wellness</h3>
-            <p>Professional massage treatments designed to relieve stress, tension, and promote deep relaxation. From Swedish to deep tissue massages.</p>
-            <a href="#treatments" class="btn btn-primary">Learn More</a>
+            <div class="service-image">
+              <div class="image-upload-area">
+                <div class="upload-icon">🖼️</div>
+                <div class="upload-text">Body Therapy Image</div>
+                <div class="upload-hint">Upload massage/body therapy image<br>400x250px recommended</div>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Body Therapy</h3>
+              <p class="service-description">Our body treatments are luxurious spa services that are more akin to a facial, but for your body. We've streamlined our process to maximize your comfort, and leave you with longer-lasting results.</p>
+              <a href="#treatments" class="service-btn">Learn More</a>
+            </div>
           </div>
-          
+
+          <!-- Waxing -->
           <div class="service-card">
-            <div class="service-icon">✨</div>
-            <h3>Waxing Services</h3>
-            <p>Professional waxing services for smooth, long-lasting results using high-quality products and expert techniques.</p>
-            <a href="#treatments" class="btn btn-primary">Learn More</a>
+            <div class="service-image">
+              <div class="image-upload-area">
+                <div class="upload-icon">🖼️</div>
+                <div class="upload-text">Waxing Service Image</div>
+                <div class="upload-hint">Upload waxing/smooth skin image<br>400x250px recommended</div>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Waxing</h3>
+              <p class="service-description">We've streamlined our waxing process to maximize your comfort and leave you with longer-lasting, smooth results. Professional techniques using high-quality products.</p>
+              <a href="#treatments" class="service-btn">Learn More</a>
+            </div>
           </div>
-          
+
+          <!-- Tinting -->
           <div class="service-card">
-            <div class="service-icon">👁️</div>
-            <h3>Lashes & Brows</h3>
-            <p>Enhance your natural beauty with our professional lash extensions and eyebrow services for a stunning look.</p>
-            <a href="#treatments" class="btn btn-primary">Learn More</a>
-          </div>
-          
-          <div class="service-card">
-            <div class="service-icon">🌿</div>
-            <h3>Body Treatments</h3>
-            <p>Specialized wellness treatments including body exfoliation, detoxifying rituals, and rejuvenating foot treatments.</p>
-            <a href="#treatments" class="btn btn-primary">Learn More</a>
+            <div class="service-image">
+              <div class="image-upload-area">
+                <div class="upload-icon">🖼️</div>
+                <div class="upload-text">Lash & Brow Image</div>
+                <div class="upload-hint">Upload eye/brow treatment image<br>400x250px recommended</div>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Tinting</h3>
+              <p class="service-description">Your brows are temporarily darkened and appear fuller. Lash extensions and tinting can enhance and darken your natural beauty for stunning results.</p>
+              <a href="#treatments" class="service-btn">Learn More</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Treatment Categories -->
-    <section id="treatments" class="treatments">
+    <!-- Large Feature Section -->
+    <section class="feature-section">
       <div class="container">
-        <h2 class="section-title">Treatment Menu</h2>
-        <p class="section-subtitle">Explore our detailed treatment menu with transparent pricing and duration information.</p>
+        <div class="feature-content">
+          <div class="feature-text">
+            <h2>Relax, restore, and indulge at Michmax Day Spa</h2>
+            <p>A tranquil sanctuary where you can retreat from the demands of daily life. Using a holistic approach to wellness, spa treatments are personalized to bring balance and equilibrium to body, mind, and spirit.</p>
+            <p>Let our skilled spa therapists guide you in the selection of pampering options to customize any service. Experience luxury treatments in the heart of Windhoek.</p>
+            <a href="#contact" class="hero-btn">Experience Luxury</a>
+          </div>
+          <div class="feature-image">
+            <div class="image-upload-area">
+              <div class="upload-icon">🖼️</div>
+              <div class="upload-text">Large Feature Image</div>
+              <div class="upload-hint">Upload a large spa ambiance or treatment room image<br>Recommended: 800x500px</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Treatments Section -->
+    <section id="treatments" class="treatments-section">
+      <div class="container">
+        <div class="services-header">
+          <h2 class="services-title">Treatment Menu</h2>
+          <p class="services-subtitle">Comprehensive spa and wellness treatments with transparent pricing</p>
+        </div>
         
         <div class="treatments-grid">
-          <!-- Massages -->
+          <!-- Massages & Wellness -->
           <div class="treatment-category">
             <div class="treatment-header">
               <h3>Massages & Wellness</h3>
-              <p>Relax and rejuvenate with our professional massage treatments</p>
+              <p>Professional massage treatments designed to relieve stress and tension</p>
             </div>
             <div class="treatment-list">
               <div class="treatment-item">
@@ -834,15 +1233,43 @@ html {
               </div>
               <div class="treatment-item">
                 <div class="treatment-info">
+                  <h4>Aroma Infused Full Body</h4>
+                  <span>60 minutes</span>
+                </div>
+                <div class="treatment-price">N$450</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
+                  <h4>Four Hands Massage</h4>
+                  <span>60 minutes</span>
+                </div>
+                <div class="treatment-price">N$600</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
                   <h4>Tranquility For Two</h4>
                   <span>60 minutes</span>
                 </div>
                 <div class="treatment-price">N$900</div>
               </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
+                  <h4>Back, Neck & Shoulder</h4>
+                  <span>30 minutes</span>
+                </div>
+                <div class="treatment-price">N$300</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
+                  <h4>Foot Reflexology</h4>
+                  <span>30 minutes</span>
+                </div>
+                <div class="treatment-price">N$250</div>
+              </div>
             </div>
           </div>
 
-          <!-- Waxing -->
+          <!-- Smooth Obsession - Waxing -->
           <div class="treatment-category">
             <div class="treatment-header">
               <h3>Smooth Obsession - Waxing</h3>
@@ -872,10 +1299,31 @@ html {
               </div>
               <div class="treatment-item">
                 <div class="treatment-info">
+                  <h4>Underarm Wax</h4>
+                  <span>30 minutes</span>
+                </div>
+                <div class="treatment-price">N$200</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
                   <h4>Full Arm Wax</h4>
                   <span>45 minutes</span>
                 </div>
                 <div class="treatment-price">N$300</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
+                  <h4>Half Leg Wax</h4>
+                  <span>45 minutes</span>
+                </div>
+                <div class="treatment-price">N$300</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
+                  <h4>Back Wax</h4>
+                  <span>45 minutes</span>
+                </div>
+                <div class="treatment-price">N$320</div>
               </div>
             </div>
           </div>
@@ -910,19 +1358,54 @@ html {
               </div>
               <div class="treatment-item">
                 <div class="treatment-info">
+                  <h4>YY Lashes</h4>
+                  <span>Full set application</span>
+                </div>
+                <div class="treatment-price">N$280</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
+                  <h4>Cluster Lashes</h4>
+                  <span>Quick application</span>
+                </div>
+                <div class="treatment-price">N$250</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
+                  <h4>Lash Refill</h4>
+                  <span>Maintenance session</span>
+                </div>
+                <div class="treatment-price">N$120</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
+                  <h4>Lash Removal</h4>
+                  <span>Safe removal service</span>
+                </div>
+                <div class="treatment-price">N$80</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
                   <h4>Eyebrow Shape & Tint</h4>
                   <span>Complete brow service</span>
                 </div>
                 <div class="treatment-price">N$180</div>
               </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
+                  <h4>Eyebrow Shape</h4>
+                  <span>Professional shaping</span>
+                </div>
+                <div class="treatment-price">N$120</div>
+              </div>
             </div>
           </div>
 
-          <!-- Wellness Treatments -->
+          <!-- Wellness Blueprint -->
           <div class="treatment-category">
             <div class="treatment-header">
               <h3>Wellness Blueprint</h3>
-              <p>Specialized treatments for complete body wellness and skin rejuvenation</p>
+              <p>Specialized treatments for complete body wellness and rejuvenation</p>
             </div>
             <div class="treatment-list">
               <div class="treatment-item">
@@ -941,17 +1424,17 @@ html {
               </div>
               <div class="treatment-item">
                 <div class="treatment-info">
-                  <h4>Honey Heel Foot Treatment</h4>
-                  <span>45 minutes</span>
-                </div>
-                <div class="treatment-price">N$350</div>
-              </div>
-              <div class="treatment-item">
-                <div class="treatment-info">
                   <h4>Foot Peel</h4>
                   <span>30 minutes</span>
                 </div>
                 <div class="treatment-price">N$250</div>
+              </div>
+              <div class="treatment-item">
+                <div class="treatment-info">
+                  <h4>Honey Heel Foot Treatment</h4>
+                  <span>45 minutes</span>
+                </div>
+                <div class="treatment-price">N$350</div>
               </div>
             </div>
           </div>
@@ -960,18 +1443,21 @@ html {
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="feature-section">
       <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2>About Michmax Day Spa</h2>
-            <p>At Michmax Day Spa, we believe in treating your body and mind like the temples they are. Located in the heart of Windhoek West, our tranquil sanctuary offers a complete wellness experience that combines luxury treatments with professional care.</p>
-            <p>Our skilled spa therapists are dedicated to providing personalized treatments that bring balance and equilibrium to your body, mind, and spirit. From relaxing massages to professional beauty services, every treatment is designed to help you retreat from the demands of daily life.</p>
-            <a href="#contact" class="btn btn-primary">Book Your Experience</a>
+        <div class="feature-content">
+          <div class="feature-image">
+            <div class="image-upload-area">
+              <div class="upload-icon">🖼️</div>
+              <div class="upload-text">About Us Image</div>
+              <div class="upload-hint">Upload spa interior or team photo<br>Recommended: 800x500px</div>
+            </div>
           </div>
-          <div class="about-image">
-            <img src="/images/spa-interior.jpg" alt="Michmax Day Spa interior" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <p style="display:none; color: var(--muted);">Spa interior image placeholder</p>
+          <div class="feature-text">
+            <h2>About Michmax Day Spa</h2>
+            <p>Located in the heart of Windhoek West, Michmax Day Spa is your tranquil sanctuary where you can retreat from the demands of daily life. We believe in treating your body and mind like the temples they are.</p>
+            <p>Using a holistic approach to wellness, our spa treatments are personalized to bring balance and equilibrium to body, mind, and spirit. Let our skilled spa therapists guide you in the selection of pampering options to customize any service.</p>
+            <a href="#contact" class="hero-btn">Visit Us</a>
           </div>
         </div>
       </div>
@@ -980,12 +1466,14 @@ html {
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2 class="section-title">Visit Us</h2>
-        <p class="section-subtitle">Ready to experience luxury and relaxation? Contact us to book your appointment or visit our spa in Windhoek West.</p>
+        <div class="services-header">
+          <h2 class="services-title">Contact</h2>
+          <p class="services-subtitle">Ready to experience luxury and relaxation? Visit us in Windhoek West</p>
+        </div>
         
         <div class="contact-content">
           <div class="contact-info">
-            <h3>Contact Information</h3>
+            <h3>Visit Our Spa</h3>
             
             <div class="contact-item">
               <div class="contact-icon">📍</div>
@@ -1001,7 +1489,15 @@ html {
               <div class="contact-icon">📞</div>
               <div class="contact-details">
                 <h4>Phone</h4>
-                <p><a href="tel:+264814654741">081 465 4741</a></p>
+                <p><a href="tel:+264814654741">+264 81 465 4741</a></p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p><a href="mailto:info@michmaxdayspa.com">info@michmaxdayspa.com</a></p>
               </div>
             </div>
             
@@ -1013,18 +1509,10 @@ html {
               </div>
             </div>
             
-            <div class="contact-item">
-              <div class="contact-icon">📱</div>
-              <div class="contact-details">
-                <h4>Social Media</h4>
-                <p><a href="https://instagram.com/michmax.day.spa">@michmax.day.spa</a></p>
-              </div>
-            </div>
-            
-            <h4 style="margin-top: 32px; margin-bottom: 16px;">Opening Hours</h4>
+            <h4 style="margin-top: 32px; margin-bottom: 16px; color: var(--brand);">Opening Hours</h4>
             <ul class="hours-list">
-              <li><span>Monday - Friday</span><span>9:00 AM - 6:00 PM</span></li>
-              <li><span>Saturday</span><span>9:00 AM - 4:00 PM</span></li>
+              <li><span>Monday - Friday</span><span>08h00 - 21h00</span></li>
+              <li><span>Saturday</span><span>08h00 - 16h00</span></li>
               <li><span>Sunday</span><span>Closed</span></li>
             </ul>
           </div>
@@ -1034,19 +1522,18 @@ html {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.1!2d17.0658!3d-22.5609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1c0b1b4!2s18B+Pasteur+St%2C+Windhoek+West%2C+Windhoek%2C+Namibia!5e0!3m2!1sen!2s!4v1609459200000!5m2!1sen!2s" 
               width="100%" 
               height="100%" 
-              style="border:0; border-radius: var(--radius);" 
               allowfullscreen 
               loading="lazy"
-              onerror="this.style.display='none';this.parentElement.innerHTML='<p style=\'color: var(--muted); display: flex; align-items: center; justify-content: center; height: 100%;\'>Interactive map will be displayed here</p>'">
+              onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'map-placeholder\'>Interactive map will be displayed here<br>Google Maps integration ready</div>'">
             </iframe>
           </div>
         </div>
         
         <div style="text-align: center; margin-top: 60px;">
-          <h3 style="color: var(--text); margin-bottom: 24px;">Ready to Book?</h3>
-          <div class="hero-cta">
-            <a href="https://wa.me/264814654741?text=Hi%21%20I%27d%20like%20to%20book%20a%20treatment" class="btn btn-primary">Book via WhatsApp</a>
-            <a href="tel:+264814654741" class="btn btn-secondary">Call Now</a>
+          <h3 style="color: var(--brand); margin-bottom: 24px; font-size: 1.8rem;">Ready to Book Your Treatment?</h3>
+          <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://wa.me/264814654741?text=Hi%21%20I%27d%20like%20to%20book%20a%20treatment" class="hero-btn">Book via WhatsApp</a>
+            <a href="tel:+264814654741" class="hero-btn" style="background: var(--gradient-glass); color: var(--brand); border: 2px solid var(--brand);">Call Now</a>
           </div>
         </div>
       </div>
@@ -1060,34 +1547,45 @@ html {
         <div class="footer-section">
           <h4>Michmax Day Spa</h4>
           <p>Your tranquil sanctuary in the heart of Windhoek. Experience luxury spa treatments that rejuvenate your body, mind, and spirit.</p>
+          <p style="margin-top: 20px;">
+            <a href="https://instagram.com/michmax.day.spa">Instagram</a> | 
+            <a href="https://www.facebook.com/michmaxdayspa">Facebook</a>
+          </p>
         </div>
         
         <div class="footer-section">
           <h4>Quick Links</h4>
-          <p><a href="#services">Services</a></p>
-          <p><a href="#treatments">Treatments</a></p>
-          <p><a href="#about">About Us</a></p>
-          <p><a href="#contact">Contact</a></p>
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#treatments">Day Packages</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
         </div>
         
         <div class="footer-section">
-          <h4>Services</h4>
-          <p><a href="#treatments">Massages & Wellness</a></p>
-          <p><a href="#treatments">Waxing Services</a></p>
-          <p><a href="#treatments">Lashes & Brows</a></p>
-          <p><a href="#treatments">Body Treatments</a></p>
+          <h4>Our Services</h4>
+          <a href="#treatments">Massages & Wellness</a>
+          <a href="#treatments">Waxing Services</a>
+          <a href="#treatments">Lashes & Brows</a>
+          <a href="#treatments">Body Treatments</a>
+          <a href="#treatments">Wellness Blueprint</a>
         </div>
         
         <div class="footer-section">
-          <h4>Contact</h4>
+          <h4>Contact Info</h4>
           <p>18B Pasteur Street<br>Windhoek West, Windhoek</p>
-          <p><a href="tel:+264814654741">081 465 4741</a></p>
-          <p><a href="https://instagram.com/michmax.day.spa">@michmax.day.spa</a></p>
+          <a href="tel:+264814654741">+264 81 465 4741</a>
+          <a href="mailto:info@michmaxdayspa.com">info@michmaxdayspa.com</a>
+          <a href="https://wa.me/264814654741">WhatsApp Us</a>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2025 Michmax Day Spa. All rights reserved. | <a href="https://instagram.com/michmax.day.spa">Instagram</a> | <a href="https://wa.me/264814654741">WhatsApp</a></p>
+        <p>&copy; 2025 Michmax Day Spa. All rights reserved. | 
+        <a href="https://instagram.com/michmax.day.spa">Instagram</a> | 
+        <a href="https://www.facebook.com/michmaxdayspa">Facebook</a> | 
+        <a href="https://wa.me/264814654741">WhatsApp</a>
+        </p>
       </div>
     </div>
   </footer>
@@ -1110,13 +1608,14 @@ html {
     },
     "geo": {"@type":"GeoCoordinates","latitude": -22.5609, "longitude": 17.0658},
     "openingHours": [
-      "Mo-Fr 09:00-18:00",
-      "Sa 09:00-16:00",
+      "Mo-Fr 08:00-21:00",
+      "Sa 08:00-16:00",
       "Su closed"
     ],
-    "priceRange": "N$70-N$900",
+    "priceRange": "N$80-N$900",
     "sameAs": [
-      "https://instagram.com/michmax.day.spa"
+      "https://instagram.com/michmax.day.spa",
+      "https://www.facebook.com/michmaxdayspa"
     ]
   }
   </script>
@@ -1148,6 +1647,91 @@ html {
       }
     });
 
+    // Mobile menu functionality
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    let mobileMenuOpen = false;
+
+    mobileMenuBtn.addEventListener('click', function() {
+      mobileMenuOpen = !mobileMenuOpen;
+      
+      if (mobileMenuOpen) {
+        navMenu.style.display = 'flex';
+        navMenu.style.position = 'fixed';
+        navMenu.style.top = '80px';
+        navMenu.style.left = '0';
+        navMenu.style.right = '0';
+        navMenu.style.background = 'rgba(0, 0, 0, 0.95)';
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.padding = '20px';
+        navMenu.style.zIndex = '200';
+        navMenu.style.backdropFilter = 'blur(20px)';
+        navMenu.style.borderTop = '1px solid var(--border)';
+        mobileMenuBtn.textContent = '✕';
+      } else {
+        navMenu.style.display = 'none';
+        mobileMenuBtn.textContent = '☰';
+      }
+    });
+
+    // Close mobile menu when clicking menu items
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navMenu.style.display = 'none';
+          mobileMenuBtn.textContent = '☰';
+          mobileMenuOpen = false;
+        }
+      });
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        navMenu.style.display = 'flex';
+        navMenu.style.position = 'static';
+        navMenu.style.flexDirection = 'row';
+        navMenu.style.background = 'none';
+        navMenu.style.padding = '0';
+        navMenu.style.backdropFilter = 'none';
+        navMenu.style.borderTop = 'none';
+        mobileMenuBtn.textContent = '☰';
+        mobileMenuOpen = false;
+      } else {
+        navMenu.style.display = 'none';
+      }
+    });
+
+    // Scroll to top button functionality
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.innerHTML = '↑';
+    scrollTopBtn.className = 'scroll-top';
+    scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
+    document.body.appendChild(scrollTopBtn);
+
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Enhanced image placeholder interactions
+    document.querySelectorAll('.image-upload-area').forEach(area => {
+      area.addEventListener('click', function() {
+        const uploadText = this.querySelector('.upload-text').textContent;
+        alert(`Ready to upload: ${uploadText}\n\nThis area is prepared for your business to upload the appropriate image.`);
+      });
+    });
+
     // Intersection Observer for fade-in animations
     const observerOptions = {
       threshold: 0.1,
@@ -1164,14 +1748,10 @@ html {
     }, observerOptions);
 
     document.addEventListener('DOMContentLoaded', function() {
-      const cards = document.querySelectorAll('.service-card, .treatment-category, .about-text, .about-image, .contact-info');
+      const cards = document.querySelectorAll('.service-card, .treatment-category, .feature-text, .feature-image, .contact-info');
       cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         observer.observe(card);
       });
-    });
-  </script>
-</body>
-</html>
